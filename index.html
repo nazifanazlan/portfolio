@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#009966',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-2xl font-bold text-primary-600">Portfolio</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-primary-600 transition">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-primary-600 transition">About</a>
+                    <a href="#experience" class="text-gray-600 hover:text-primary-600 transition">Experience</a>
+                    <a href="#projects" class="text-gray-600 hover:text-primary-600 transition">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-primary-600 transition">Contact</a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-gray-600 hover:text-primary-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#home" class="block text-gray-600 hover:text-primary-600 transition">Home</a>
+                <a href="#about" class="block text-gray-600 hover:text-primary-600 transition">About</a>
+                <a href="#experience" class="block text-gray-600 hover:text-primary-600 transition">Experience</a>
+                <a href="#projects" class="block text-gray-600 hover:text-primary-600 transition">Projects</a>
+                <a href="#contact" class="block text-gray-600 hover:text-primary-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-white to-primary-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="flex-1 text-center md:text-left">
+                    <p class="text-primary-600 font-medium mb-2">Hello, I'm</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+                        Nazifa Nazlan
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl text-primary-700 font-semibold mb-6">
+                        Web Developer
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8 max-w-lg">
+                        I create beautiful and functional websites that help businesses grow and succeed in the digital world.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#projects" class="px-8 py-3 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition shadow-lg hover:shadow-xl">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="px-8 py-3 border-2 border-primary-600 text-primary-600 rounded-full font-medium hover:bg-primary-600 hover:text-white transition">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-1 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary-300 to-primary-600 flex items-center justify-center shadow-2xl">
+                            <div class="w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
+                                <img src="IMG_7965.jpg" alt="Profile" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-200 rounded-full -z-10"></div>
+                        <div class="absolute -top-4 -left-4 w-16 h-16 bg-primary-300 rounded-full -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="flex-1">
+                    <div class="bg-gradient-to-br from-primary-100 to-primary-200 p-8 rounded-2xl shadow-lg">
+                        <div class="bg-white p-6 rounded-xl">
+                            <i class="fas fa-code text-6xl text-primary-500 mb-4"></i>
+                            <h3 class="text-xl font-semibold text-gray-800">Passionate Developer</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-1 space-y-6">
+                    <h3 class="text-2xl font-bold text-gray-900">
+                        I'm a dedicated developer who loves creating amazing digital experiences
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        I am a final-year Information Security student at Universiti Tun Hussein Onn Malaysia (UTHM) with a passion 
+                        for building secure and reliable systems. I am currently completing my industrial training as an IT Intern at 
+                        UTHM Education & Training, where I worked on developing a full-stack system for organizational use.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        During my academic journey, I have been involved in multiple system development projects that strengthened my 
+                        skills in backend integration and application security. I have implemented security features such as Google 
+                        reCAPTCHA and multi-factor authentication (MFA) to improve system protection.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        My final year project focused on developing an Email Spoofing Detection Tool using domain-based authentication, 
+                        reflecting my interest in cybersecurity, secure system design, and threat detection. I am eager to apply my technical 
+                        knowledge in a full-time role within cybersecurity or software development while continuing to learn and grow professionally.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-br from-primary-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Work Experience</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    My professional journey and career highlights
+                </p>
+            </div>
+            <div class="space-y-8">
+                <!-- Experience Card 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-primary-600">Intern - Software Development</h3>
+                            <!-- <p class="text-lg text-gray-800 font-medium">ABC Technology Sdn Bhd</p> -->
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-500">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Aug 2025 - Present</span>
+                        </div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 list-disc list-inside">
+                        <li>Developed a full-stack system from frontend to backend for organization using HTML, Javascript, MySQL and PHP.</li>
+                        <li>Responsible for updating and maintaining the organization’s website with hands-on experience in WordPress and Elementor, including layout customization, content updates, and basic site management.</li>
+                        <li>Provide technical support to staff and end-users.</li>
+                        <li>Managed system and database administration.</li>
+                        <li>Handled system development and testing for new and existing features.</li>
+                        <li>Designed and managed digital content for organizational use.</li>
+                        <li>Assisted in ICT security implementation and monitoring.</li>
+                        <li>Prepared documentation and reports for system and security activities.</li>
+                    </ul>
+                </div>
+                <!-- Experience Card 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-primary-600">Research Fieldwork Assistant</h3>
+                            <!-- <p class="text-lg text-gray-800 font-medium">XYZ Digital Solutions</p> -->
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-500">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Jul 2025 - Apr 2026</span>
+                        </div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 list-disc list-inside">
+                        <li>Assisted in a mixed-methods study on cybersecurity threats involving professionals from academia and industry.</li>
+                        <li>Contributed to data collection, interviews, and quantitative analysis aligned with NIST and ISO/IEC 27001 frameworks.</li>
+                        <li>Supported the development of a comparative analysis model and technical report on threat mitigation strategies.</li>
+                        <li>Conducted AI-based incident analysis and contributed to academic writing and the production of a public awareness video on cybersecurity resilience.</li>
+                        <li>Contributed to the publication of a technical report and the preparation of a Scopus-indexed journal article on cybersecurity solutions.</li>
+                        <li>Involved in developing policy recommendations and strategic frameworks to enhance national cybersecurity resilience.</li>
+                        <li>Strengthened analytical and research competencies in cyber threat analysis, risk management, and information assurance.</li>
+                    </ul>
+                </div>
+                <!-- Experience Card 3 
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-primary-600">Intern - Software Development</h3>
+                            <p class="text-lg text-gray-800 font-medium">Tech Startup Malaysia</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-500">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Jan 2022 - May 2022</span>
+                        </div>
+                    </div>
+                    <ul class="text-gray-600 space-y-2 list-disc list-inside">
+                        <li>Assisted in developing web-based management systems</li>
+                        <li>Learned and applied best practices in software development</li>
+                        <li>Conducted testing and debugging of existing applications</li>
+                        <li>Documented technical specifications and user guides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Here are some of my recent works that showcase my skills and creativity
+                </p>
+            </div>
+            <div class="space-y-8">
+                 <!-- Project Card 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition border border-gray-100">
+                    <h3 class="text-xl font-bold text-primary-600 mb-3">Master Part-Time Management Web System</h3>
+                    <p class="text-gray-600 mb-4">A web-based academic staff and administrative management system.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 list-disc list-inside">
+                        <li>Designed, developed, and deployed a web-based academic staff and administrative management system to replace manual, paper-based workflows.</li>
+                        <li>Independently handled system analysis, requirements gathering, database design, development, testing, and deployment.</li>
+                        <li>Developed role-based modules for administrators, lecturers, and coordinators to manage appointments, scheduling, academic data, and claims.</li>
+                        <li>Implemented automated lecturer appointment letter generation in PDF format and end-to-end teaching and movement claim workflows with validation and approval tracking.</li>
+                        <li>Designed and managed a relational MySQL database and implemented secure user authentication.</li>
+                        <li>Successfully deployed the system, which is currently used by administrative staff, lecturers, and coordinators.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">PHP</span>
+                        <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">MySQL</span>
+                        <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">Bootstrap</span>
+                        <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">JavaScript</span>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition border border-gray-100">
+                    <h3 class="text-xl font-bold text-primary-600 mb-3">SpoofSentry</h3>
+                    <p class="text-gray-600 mb-4">Email Spoofing Detection Tool Using Domain-Based Authentication.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6 list-disc list-inside">
+                        <li>Final-year degree project focused on building a domain-based spoofing detection tool using Python and Tkinter for GUI-based analysis of .eml files.</li>
+                        <li>Integrated SPF, DKIM, and DMARC authentication checks to identify spoofed emails and improve organizational email security.</li>
+                        <li>Enabled bulk analysis of email files, automatically classifying emails as spoofed or legitimate.</li>
+                        <li>Developed features for detailed email analysis reporting, including on-screen summaries and downloadable PDF reports for record-keeping.</li>
+                        <li>Implemented backend integration using SMTP and app passwords, enabling administrators to send automated warning emails directly through the system.</li>
+                        <li>Built alert functionality to notify employees of spoofing risks via email, supporting real- time incident response by IT personnel.</li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">Python</span>
+                        <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">Tkinter</span>
+                        <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">SQLite</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center gap-2 px-8 py-3 border-2 border-primary-600 text-primary-600 rounded-full font-medium hover:bg-primary-600 hover:text-white transition">
+                    View All Projects
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-primary-50 to-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary-500 mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                    Have a project in mind? Let's work together to bring your ideas to life!
+                </p>
+            </div>
+            <!-- Contact Info - Inline -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-envelope text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">Email</h3>
+                    <p class="text-gray-600">ifanaz11@gmail.com</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-phone text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">Phone</h3>
+                    <p class="text-gray-600">+60 11-6416 7451</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-3">
+                        <i class="fas fa-map-marker-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">Location</h3>
+                    <p class="text-gray-600">Johor Bahru, Johor, Malaysia</p>
+                </div>
+            </div>
+            <!-- Social Links - Centered Below -->
+            <div class="text-center">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Follow Me</h3>
+                <div class="flex justify-center gap-4">
+                    <a href="https://www.linkedin.com/in/nur-fatin-nazifa-mohd-nazlan-b1712b232" target="_blank" class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center hover:bg-primary-500 hover:text-white text-primary-600 transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/nazifanazlan" target="_blank" class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center hover:bg-primary-500 hover:text-white text-primary-600 transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <!--<a href="https://twitter.com/your-username" target="_blank" class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center hover:bg-primary-500 hover:text-white text-primary-600 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/your-username" target="_blank" class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center hover:bg-primary-500 hover:text-white text-primary-600 transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-5">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <a href="#home" class="text-2xl font-bold text-primary-400">Portfolio</a>
+                    <p class="text-gray-400 mt-2">Building amazing digital experiences</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#home" class="text-gray-400 hover:text-primary-400 transition">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-primary-400 transition">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-primary-400 transition">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-primary-400 transition">Contact</a>
+                </div> 
+            </div>-->
+            <div class="text-gray-400 text-center">
+                    &copy; 2026 nazifanazlan. All rights reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 text-white rounded-full shadow-lg hover:bg-primary-700 transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
