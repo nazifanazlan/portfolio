@@ -33,6 +33,159 @@
         html {
             scroll-behavior: smooth;
         }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 480px;
+            margin: 20px 0;
+        }
+        .slider {
+            display: flex;
+            width: 1000%;
+            transition: transform 0.5s ease;
+        }
+        .slider .image-item {
+            width: 10%;
+            min-width: 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-bottom: 16px;
+        }
+        .slider img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+        .slider p {
+            margin-top: 0;
+            font-size: 14px;
+            color: #374151;
+            text-align: center;
+            font-weight: 500;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.95);
+            border: 1px solid rgba(148,163,184,0.4);
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(15,23,42,0.12);
+            transition: transform 0.2s ease, background 0.2s ease;
+            z-index: 10;
+        }
+        .slider-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.05);
+        }
+        .slider-prev {
+            left: 12px;
+        }
+        .slider-next {
+            right: 12px;
+        }
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15,23,42,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            z-index: 60;
+        }
+        .image-modal.hidden {
+            display: none;
+        }
+        .modal-content {
+            max-width: 90%;
+            width: 900px;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(15,23,42,0.25);
+            position: relative;
+        }
+        .modal-img {
+            width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            display: block;
+            background: #f8fafc;
+        }
+        .modal-caption {
+            padding: 18px 24px;
+            font-size: 16px;
+            color: #0f172a;
+            font-weight: 600;
+            background: #ffffff;
+        }
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 9999px;
+            border: 1px solid rgba(148,163,184,0.4);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #0f172a;
+            font-size: 14px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .slider-container {
+                height: 420px;
+            }
+            .slider img {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider-container {
+                height: 320px;
+            }
+            .slider img {
+                height: 220px;
+            }
+            .slider p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slider-container {
+                height: 260px;
+            }
+            .slider img {
+                height: 170px;
+            }
+            .slider p {
+                font-size: 11px;
+            }
+            .slider-btn {
+                width: 36px;
+                height: 36px;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -236,6 +389,66 @@
             <div class="space-y-8">
                  <!-- Project Card 1 -->
                 <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition border border-gray-100">
+                    <!-- Automatic Image Slider -->
+                <div class="slider-container">
+                    <button type="button" class="slider-btn slider-prev" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button type="button" class="slider-btn slider-next" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="slider">
+                        <div class="image-item">
+                            <img src="admin dashboard.png" alt="Admin Dashboard">
+                            <p>Admin Dashboard</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="appointment letter generation.png" alt="Appointment Letter Generation">
+                            <p>Appointment Letter Generation</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="claim estimation.png" alt="Claim Estimation">
+                            <p>Claim Estimation</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="claim checklist.png" alt="Claim Checklist">
+                            <p>Claim Checklist</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="lecturer appointment list.png" alt="Lecturer Appointment List">
+                            <p>Lecturer Appointment List</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="gm sign.png" alt="General Manager Sign">
+                            <p>General Manager Sign</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="appointment letter.png" alt="Appointment Letter">
+                            <p>Appointment Letter</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="claims form.png" alt="Claims Form">
+                            <p>Claims Form</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="system database.png" alt="System Database">
+                            <p>System Database</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="admin account management.png" alt="Admin Account Management">
+                            <p>Admin Account Management</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="image-modal" class="image-modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-caption">
+                    <div class="modal-content">
+                        <button type="button" class="modal-close" aria-label="Close modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img class="modal-img" src="" alt="Expanded image">
+                        <div id="modal-caption" class="modal-caption"></div>
+                    </div>
+                </div>
                     <h3 class="text-xl font-bold text-primary-600 mb-3">Master Part-Time Management Web System</h3>
                     <p class="text-gray-600 mb-4">A web-based academic staff and administrative management system.</p>
                     <ul class="text-gray-600 space-y-2 mb-6 list-disc list-inside">
@@ -405,6 +618,66 @@
                 nav.classList.remove('shadow-md');
             }
         });
+
+        // Image Slider Controls
+        let currentIndex = 0;
+        const slider = document.querySelector('.slider');
+        const imageItems = document.querySelectorAll('.image-item');
+        const totalImages = imageItems.length;
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        const modal = document.getElementById('image-modal');
+        const modalImg = modal.querySelector('.modal-img');
+        const modalCaption = modal.querySelector('.modal-caption');
+        const modalClose = modal.querySelector('.modal-close');
+
+        function updateSlider(index) {
+            currentIndex = (index + totalImages) % totalImages;
+            slider.style.transform = `translateX(-${currentIndex * 10}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            updateSlider(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            updateSlider(currentIndex + 1);
+        });
+
+        // Auto slide
+        let sliderInterval = setInterval(() => {
+            updateSlider(currentIndex + 1);
+        }, 3000);
+
+        function openModal(src, alt) {
+            modalImg.src = src;
+            modalImg.alt = alt;
+            modalCaption.textContent = alt;
+            modal.classList.remove('hidden');
+            clearInterval(sliderInterval);
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            sliderInterval = setInterval(() => {
+                updateSlider(currentIndex + 1);
+            }, 3000);
+        }
+
+        imageItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            img.addEventListener('click', () => {
+                openModal(img.src, img.alt || `Image ${index + 1}`);
+            });
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
     </script>
+
 </body>
 </html>
