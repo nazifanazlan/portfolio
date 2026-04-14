@@ -246,7 +246,7 @@
                     <div class="relative">
                         <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-primary-300 to-primary-600 flex items-center justify-center shadow-2xl">
                             <div class="w-56 h-56 sm:w-72 sm:h-72 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden">
-                                <img src="IMG_7965.JPG" alt="Profile" class="w-full h-full object-cover">
+                                <img src="IMG_7965.jpg" alt="Profile" class="w-full h-full object-cover">
                             </div>
                         </div>
                         <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary-200 rounded-full -z-10"></div>
@@ -399,6 +399,10 @@
                     </button>
                     <div class="slider">
                         <div class="image-item">
+                            <img src="login page.png" alt="Login Page">
+                            <p>Login Page</p>
+                        </div>
+                        <div class="image-item">
                             <img src="admin dashboard.png" alt="Admin Dashboard">
                             <p>Admin Dashboard</p>
                         </div>
@@ -440,13 +444,13 @@
                         </div>
                     </div>
                 </div>
-                <div id="image-modal" class="image-modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-caption">
+                <div id="image-modal-1" class="image-modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-caption-1">
                     <div class="modal-content">
                         <button type="button" class="modal-close" aria-label="Close modal">
                             <i class="fas fa-times"></i>
                         </button>
                         <img class="modal-img" src="" alt="Expanded image">
-                        <div id="modal-caption" class="modal-caption"></div>
+                        <div id="modal-caption-1" class="modal-caption"></div>
                     </div>
                 </div>
                     <h3 class="text-xl font-bold text-primary-600 mb-3">Master Part-Time Management Web System</h3>
@@ -466,8 +470,46 @@
                         <span class="px-4 py-1.5 border border-primary-200 text-primary-600 rounded-full text-sm">JavaScript</span>
                     </div>
                 </div>
+
                 <!-- Project Card 2 -->
+                <div class="space-y-8">
                 <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-2xl transition border border-gray-100">
+                    <!-- Automatic Image Slider -->
+                <div class="slider-container">
+                    <button type="button" class="slider-btn slider-prev" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button type="button" class="slider-btn slider-next" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="slider">
+                        <div class="image-item">
+                            <img src="main interface.jpg" alt="Main Interface">
+                            <p>Main Interface</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="user login.jpg" alt="User Login">
+                            <p>User Login</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="registration.jpg" alt="Registration">
+                            <p>Registration</p>
+                        </div>
+                        <div class="image-item">
+                            <img src="email analysis interface.png" alt="Email Analysis Interface">
+                            <p>Email Analysis Interface</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="image-modal-2" class="image-modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-caption-2">
+                    <div class="modal-content">
+                        <button type="button" class="modal-close" aria-label="Close modal">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <img class="modal-img" src="" alt="Expanded image">
+                        <div id="modal-caption-2" class="modal-caption"></div>
+                    </div>
+                </div>
                     <h3 class="text-xl font-bold text-primary-600 mb-3">SpoofSentry</h3>
                     <p class="text-gray-600 mb-4">Email Spoofing Detection Tool Using Domain-Based Authentication.</p>
                     <ul class="text-gray-600 space-y-2 mb-6 list-disc list-inside">
@@ -619,64 +661,83 @@
             }
         });
 
-        // Image Slider Controls
-        let currentIndex = 0;
-        const slider = document.querySelector('.slider');
-        const imageItems = document.querySelectorAll('.image-item');
-        const totalImages = imageItems.length;
-        const prevBtn = document.querySelector('.slider-prev');
-        const nextBtn = document.querySelector('.slider-next');
-        const modal = document.getElementById('image-modal');
-        const modalImg = modal.querySelector('.modal-img');
-        const modalCaption = modal.querySelector('.modal-caption');
-        const modalClose = modal.querySelector('.modal-close');
+        // Image Slider Controls - Handle Multiple Sliders
+        function initSlider(containerIndex) {
+            const container = document.querySelectorAll('.slider-container')[containerIndex];
+            if (!container) return;
 
-        function updateSlider(index) {
-            currentIndex = (index + totalImages) % totalImages;
-            slider.style.transform = `translateX(-${currentIndex * 10}%)`;
-        }
+            let currentIndex = 0;
+            const slider = container.querySelector('.slider');
+            const imageItems = container.querySelectorAll('.image-item');
+            const totalImages = imageItems.length;
+            const prevBtn = container.querySelector('.slider-prev');
+            const nextBtn = container.querySelector('.slider-next');
+            const modal = document.getElementById(`image-modal-${containerIndex + 1}`);
+            const modalImg = modal.querySelector('.modal-img');
+            const modalCaption = modal.querySelector(`#modal-caption-${containerIndex + 1}`);
+            const modalClose = modal.querySelector('.modal-close');
+            let sliderInterval;
 
-        prevBtn.addEventListener('click', () => {
-            updateSlider(currentIndex - 1);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            updateSlider(currentIndex + 1);
-        });
-
-        // Auto slide
-        let sliderInterval = setInterval(() => {
-            updateSlider(currentIndex + 1);
-        }, 3000);
-
-        function openModal(src, alt) {
-            modalImg.src = src;
-            modalImg.alt = alt;
-            modalCaption.textContent = alt;
-            modal.classList.remove('hidden');
-            clearInterval(sliderInterval);
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-            sliderInterval = setInterval(() => {
-                updateSlider(currentIndex + 1);
-            }, 3000);
-        }
-
-        imageItems.forEach((item, index) => {
-            const img = item.querySelector('img');
-            img.addEventListener('click', () => {
-                openModal(img.src, img.alt || `Image ${index + 1}`);
-            });
-        });
-
-        modalClose.addEventListener('click', closeModal);
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
+            function updateSlider(index) {
+                currentIndex = (index + totalImages) % totalImages;
+                slider.style.transform = `translateX(-${currentIndex * 10}%)`;
             }
-        });
+
+            function startAutoSlide() {
+                sliderInterval = setInterval(() => {
+                    updateSlider(currentIndex + 1);
+                }, 3000);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(sliderInterval);
+            }
+
+            prevBtn.addEventListener('click', () => {
+                updateSlider(currentIndex - 1);
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                updateSlider(currentIndex + 1);
+                stopAutoSlide();
+                startAutoSlide();
+            });
+
+            function openModal(src, alt) {
+                modalImg.src = src;
+                modalImg.alt = alt;
+                modalCaption.textContent = alt;
+                modal.classList.remove('hidden');
+                stopAutoSlide();
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                startAutoSlide();
+            }
+
+            imageItems.forEach((item, index) => {
+                const img = item.querySelector('img');
+                img.addEventListener('click', () => {
+                    openModal(img.src, img.alt || `Image ${index + 1}`);
+                });
+            });
+
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+
+            startAutoSlide();
+        }
+
+        // Initialize all sliders
+        initSlider(0);
+        initSlider(1);
     </script>
 
 </body>
